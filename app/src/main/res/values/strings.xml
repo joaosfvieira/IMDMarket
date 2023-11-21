@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">IMDMarket</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_menu">O que deseja fazer?</string>
+    <string name="menu_bt_01">Cadastrar produto</string>
+    <string name="menu_bt_02">Listar produtos</string>
+    <string name="menu_bt_03">Alterar produto</string>
+    <string name="menu_bt_04">Deletar produtos</string>
+
+    <string name="create_title">CADASTRAR PRODUTO</string>
+    <string name="list_title">LISTA DE PRODUTOS</string>
+    <string name="update_title">ALTERAR PRODUTO</string>
+    <string name="delete_title">DELETAR PRODUTO</string>
+
+    <string name="create_save_button">Salvar</string>
+    <string name="create_flush_button">Limpar</string>
+    <string name="create_product_code">Código produto:</string>
+    <string name="create_product_name">Nome produto:</string>
+    <string name="create_product_description">Descrição do produto:</string>
+    <string name="create_product_stock">Estoque produto:</string>
+
+    <string name="list_back_button">Voltar</string>
+
+    <string name="delete_product_code">Código produto:</string>
+    <string name="delete_delete_button">Deletar</string>
+    <string name="delete_flush_button">Limpar</string>
+
+    <string name="update_save_button">Alterar</string>
+    <string name="update_flush_button">Limpar</string>
+    <string name="update_product_code">Código produto:</string>
+    <string name="update_product_name">Nome produto:</string>
+    <string name="update_product_description">Descrição do produto:</string>
+    <string name="update_product_stock">Estoque produto:</string>
+
+    <string name="login_username">Login</string>
+    <string name="login_password">Senha</string>
+    <string name="login_submit_button">Entrar</string>
+    <string name="login_forgot_link">Esqueci minha senha/login</string>
+
+    <string name="forgot_username">Recuperar Login</string>
+    <string name="forgot_hint_username">Novo Login</string>
+    <string name="forgot_password">Nova Senha</string>
+    <string name="forgot_submit_button">Recuperar</string>
+    <string name="forgot_login_link">Eu sei minha senha/login</string>
+</resources>
