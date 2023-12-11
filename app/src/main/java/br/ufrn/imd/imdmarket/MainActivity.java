@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     FragmentForgot fragmentForgot;
     FragmentCreate fragmentCreate;
     FragmentMenu fragmentMenu;
-    FragmentList fragmentList;
+    FragmentRecycler fragmentRecycler;
     FragmentDelete fragmentDelete;
     FragmentUpdate fragmentUpdate;
     private static boolean isFirstRun = true;
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         this.fragmentLogin = new FragmentLogin();
         this.fragmentForgot = new FragmentForgot();
         this.fragmentCreate = new FragmentCreate();
-        this.fragmentList = new FragmentList();
+        this.fragmentRecycler = new FragmentRecycler();
         this.fragmentDelete = new FragmentDelete();
         this.fragmentUpdate = new FragmentUpdate();
         this.fragmentMenu = new FragmentMenu();
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
             this.changeFragment(fragmentCreate, R.id.fragment_container);
         }
         else if(id == R.id.menu_bt_02){
-            this.changeFragment(fragmentList, R.id.fragment_container);
+            this.changeFragment(fragmentRecycler, R.id.fragment_container);
         }
         else if(id == R.id.menu_bt_03){
             this.changeFragment(fragmentUpdate, R.id.fragment_container);

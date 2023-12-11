@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_cv_01"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Product Image -->
+        <ImageView
+            android:id="@+id/item_iv_01"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/no_product"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <!-- Product Name -->
+        <TextView
+            android:id="@+id/item_tv_01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/item_iv_01"
+            android:layout_marginStart="16dp"
+            android:text="Product Name"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Product Code -->
+        <TextView
+            android:id="@+id/item_tv_02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_tv_01"
+            android:layout_toEndOf="@+id/item_iv_01"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="Product Code"
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

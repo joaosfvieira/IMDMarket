@@ -1,0 +1,20 @@
+0001;Arroz;Arroz Branco;50
+0002;Feijão;Feijão Carioquinha;30
+0003;Macarrão;Macarrão Espaguete;40
+0004;Óleo;Óleo de Soja;25
+0005;Açúcar;Açúcar Refinado;35
+0006;Sal;Sal de Cozinha;45
+0007;Café;Café em Pó;15
+0008;Leite;Leite Integral;20
+0009;Farinha;Farinha de Trigo;28
+0010;Sabonete;Sabonete de Erva-Doce;18
+0011;Tomate;Tomate Vermelho;22
+0012;Cenoura;Cenoura Orgânica;33
+0013;Maçã;Maçã Fuji;40
+0014;Frango;Peito de Frango;28
+0015;Detergente;Detergente Líquido;50
+0016;Escova de Dentes;Escova de Dentes Macia;15
+0017;Shampoo;Shampoo Revitalizante;25
+0018;Lâmpada;Lâmpada LED;30
+0019;Caderno;Caderno Universitário;40
+0020;Caneta;Caneta Esferográfica;50
