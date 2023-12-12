@@ -19,6 +19,9 @@
     <string name="create_product_name">Nome produto:</string>
     <string name="create_product_description">Descrição do produto:</string>
     <string name="create_product_stock">Estoque produto:</string>
+    <string name="create_is_favorite">Preferencial</string>
+    <string name="create_is_favorite_yes">Sim</string>
+    <string name="create_is_favorite_no">Nao</string>
 
     <string name="list_back_button">Voltar</string>
 

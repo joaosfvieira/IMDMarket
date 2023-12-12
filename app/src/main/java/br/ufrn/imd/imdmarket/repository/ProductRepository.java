@@ -1,5 +1,7 @@
 package br.ufrn.imd.imdmarket.repository;
 
+import android.os.Build;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -9,6 +11,7 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.ufrn.imd.imdmarket.exception.NotSupportedBySDKException;
 import br.ufrn.imd.imdmarket.model.Product;
 
 public class ProductRepository {
@@ -42,6 +45,10 @@ public class ProductRepository {
 
     public void addProduct(Product p) {
         productList.add(p);
+        try {
+            sortProductListByFavorite();
+        } catch (NotSupportedBySDKException e) {
+        }
         ProductRepository.saveProductsInFile();
     }
 
@@ -82,6 +89,15 @@ public class ProductRepository {
         return false;
     }
 
+    public static void sortProductListByFavorite() throws NotSupportedBySDKException {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            productList.sort(Product.comparator);
+        }
+        else
+            throw new NotSupportedBySDKException("SDK does not support the sorting used");
+    }
+
+
     public static void setProductsFile(File file) {
         ProductRepository.productsFile = file;
     }
@@ -95,7 +111,7 @@ public class ProductRepository {
             List<Product> products = productRepository.getProductList();
 
             for(Product p : products) {
-                String formatedProduct = p.getCode() + ";" + p.getName() + ";" + p.getDescription() + ";" + p.getStock();
+                String formatedProduct = p.getCode() + ";" + p.getName() + ";" + p.getDescription() + ";" + p.getStock() + ";" + p.isFavorite();
                 lines.add(formatedProduct);
             }
             for (String line : lines) {
@@ -126,7 +142,7 @@ public class ProductRepository {
                 String[] objSplit = line.split(";");
 
                 // Mapeando o vetor de strings para um objeto Product
-                Product product = new Product(objSplit[0], objSplit[1], objSplit[2], Integer.valueOf(objSplit[3]));
+                Product product = new Product(objSplit[0], objSplit[1], objSplit[2], Integer.valueOf(objSplit[3]), Boolean.valueOf(objSplit[4]));
                 System.out.println(product.toString());
                 // Salvando o obj product na lista de products
                 products.add(product);
@@ -134,6 +150,7 @@ public class ProductRepository {
             }
 
             bufferedReader.close();
+            sortProductListByFavorite();
             System.out.println("> Products loaded from file database");
         } catch (Exception e) {
             System.out.println("> ERROR loading products from file database");

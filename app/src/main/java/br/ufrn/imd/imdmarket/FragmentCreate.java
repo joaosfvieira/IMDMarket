@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -21,6 +22,7 @@ public class FragmentCreate extends Fragment {
     EditText create_edt_02;
     EditText create_edt_03;
     EditText create_edt_04;
+    CheckBox checkBox;
 
     public FragmentCreate() {
         // Required empty public constructor
@@ -52,6 +54,7 @@ public class FragmentCreate extends Fragment {
         create_edt_02 = v.findViewById(R.id.create_edt_02);
         create_edt_03 = v.findViewById(R.id.create_edt_03);
         create_edt_04 = v.findViewById(R.id.create_edt_04);
+        checkBox = v.findViewById(R.id.create_checkBox);
 
 
         create_bt_01.setOnClickListener(v12 -> {
@@ -77,8 +80,16 @@ public class FragmentCreate extends Fragment {
             String productName = String.valueOf(create_edt_02.getText());
             String productDescription = String.valueOf(create_edt_03.getText());
             int stock = Integer.parseInt(String.valueOf(create_edt_04.getText()));
+            boolean isFavorite;
 
-            Product p = new Product(productCode, productName, productDescription, stock);
+            if(checkBox.isChecked()) {
+                isFavorite = true;
+            }
+            else {
+                isFavorite = false;
+            }
+
+            Product p = new Product(productCode, productName, productDescription, stock, isFavorite);
             ProductRepository productRepository = ProductRepository.getInstance();
             productRepository.addProduct(p);
 
