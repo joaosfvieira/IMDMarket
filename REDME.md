@@ -9,7 +9,7 @@ O Aplicativo desenvolvido deverá possuir:
 - [ ] Utilização de pelos menos três dos seguintes recursos
     - [ ] CheckBox
     - [ ] RadioButton
-    - [ ] imageButton
+    - [x] imageButton
     - [x] ImageView
     - [ ] VideoView
 - [x] Interação com o usuário, a partir de Toasts ou AlertDialogs;

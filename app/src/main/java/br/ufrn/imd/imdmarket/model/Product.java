@@ -1,13 +1,18 @@
 package br.ufrn.imd.imdmarket.model;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+
 import br.ufrn.imd.imdmarket.R;
+import br.ufrn.imd.imdmarket.utils.ImageUtils;
 
 public class Product {
     private String code;
     private String name;
     private String description;
     private int stock;
-    private int image;
+    private Drawable image;
 
     public Product(String code, String name, String description, int stock) {
         this.code = code;
@@ -48,6 +53,10 @@ public class Product {
         this.stock = stock;
     }
 
+    public void setImage(Drawable image) {
+        this.image = image;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
@@ -58,7 +67,12 @@ public class Product {
                 '}';
     }
 
-    public int getImage() {
-        return this.image != 0 ? this.image : R.drawable.no_product;
+    public Drawable getImage(Context context) {
+        this.image = ImageUtils.getDrawableFromInternalStorage(context, code.concat(".png"));
+        if(this.image != null) {
+            return this.image;
+        }
+
+        return context.getResources().getDrawable(R.drawable.no_product);
     }
 }
