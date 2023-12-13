@@ -1,146 +1,122 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".FragmentUpdate">
+    android:padding="16dp">
 
-    <!-- TODO: Update blank fragment layout -->
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
+        <!-- Title -->
         <TextView
             android:id="@+id/create_tv_01"
-            android:layout_width="411dp"
-            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:gravity="center"
             android:text="@string/update_title"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton"
-            tools:layout_editor_absoluteX="0dp" />
+            android:textSize="24sp" />
 
+        <!-- Upload Button -->
         <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="150sp"
-            android:layout_height="150sp"
-            android:src="@android:drawable/btn_star"
-            app:layout_constraintBottom_toTopOf="@+id/update_tv_02"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/update_bt_01"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:background="#FFFFFF"
-            android:text="@string/update_save_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/update_bt_02"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/update_bt_02"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
-            android:background="#FFFFFF"
-            android:text="@string/update_flush_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/update_bt_01" />
+            android:id="@+id/update_ibt_01"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
+            android:text="Upload imagem"
+            android:background="@drawable/upload_image" />
 
         <TextView
-            android:id="@+id/update_tv_02"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
             android:text="@string/update_product_code"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/update_edt_01"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton"
-            tools:layout_editor_absoluteX="41dp" />
-
-        <TextView
-            android:id="@+id/update_tv_03"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/update_product_name"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/update_edt_02"
-            app:layout_constraintTop_toBottomOf="@+id/update_edt_01"
-            tools:layout_editor_absoluteX="40dp" />
-
-        <TextView
-            android:id="@+id/update_tv_04"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/update_product_description"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/update_edt_03"
-            app:layout_constraintTop_toBottomOf="@+id/update_edt_02"
-            tools:layout_editor_absoluteX="40dp" />
-
-        <TextView
-            android:id="@+id/update_tv_05"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/update_product_stock"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/update_edt_04"
-            app:layout_constraintTop_toBottomOf="@+id/update_edt_03"
-            tools:layout_editor_absoluteX="33dp" />
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/update_edt_01"
-            android:layout_width="330dp"
-            android:layout_height="40dp"
-            android:ems="10"
-            android:inputType="numberDecimal"
-            app:layout_constraintBottom_toTopOf="@+id/update_tv_03"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/update_tv_02" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@string/update_product_name"
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/update_edt_02"
-            android:layout_width="330dp"
-            android:layout_height="40dp"
-            android:ems="10"
-            app:layout_constraintBottom_toTopOf="@+id/update_tv_04"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/update_tv_03" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:inputType="text" />
+
+        <TextView
+            android:id="@+id/update_tv_03"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@string/update_product_description"
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/update_edt_03"
-            android:layout_width="330dp"
-            android:layout_height="40dp"
-            android:ems="10"
-            android:inputType="textMultiLine"
-            app:layout_constraintBottom_toTopOf="@+id/update_tv_05"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/update_tv_04" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:inputType="textMultiLine" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:text="@string/update_product_stock"
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/update_edt_04"
-            android:layout_width="330dp"
-            android:layout_height="40dp"
-            android:ems="10"
-            android:inputType="numberDecimal"
-            app:layout_constraintBottom_toTopOf="@+id/update_bt_01"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/update_tv_05" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:inputType="number" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <CheckBox
+            android:id="@+id/create_checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/create_is_favorite" />
 
-</FrameLayout>
+        <!-- Submit and Clear Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/update_bt_01"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="@string/update_save_button" />
+
+            <Button
+                android:id="@+id/update_bt_02"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="100dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:text="@string/update_flush_button" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
+

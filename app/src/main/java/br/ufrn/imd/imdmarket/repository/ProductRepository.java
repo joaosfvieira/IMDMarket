@@ -70,7 +70,7 @@ public class ProductRepository {
         return false;
     }
 
-    public boolean updateProduct(String productCode, String productName, String productDescription, String productStock) {
+    public boolean updateProduct(String productCode, String productName, String productDescription, String productStock, boolean isFavorite) {
         for(Product p : productList) {
             if (p.getCode().equalsIgnoreCase(productCode)) {
 
@@ -80,6 +80,10 @@ public class ProductRepository {
                 if(!productDescription.isEmpty()) {
                     p.setDescription(productDescription);
                 }
+                if(!productStock.isEmpty()) {
+                    p.setStock(Integer.parseInt(productStock));
+                }
+                p.setFavorite(isFavorite);
                 if(!productStock.isEmpty()) {
                     p.setStock(Integer.parseInt(productStock));
                 }
