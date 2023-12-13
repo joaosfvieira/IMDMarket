@@ -73,15 +73,24 @@ public class FragmentCreate extends Fragment {
 
         checkBox = v.findViewById(R.id.create_checkBox);
 
-        create_ibt_01.setOnClickListener(v12 -> {
-            openImagePicker();
-        });
-
         create_bt_01.setOnClickListener(v12 -> {
             addProduct();
          });
         create_bt_02.setOnClickListener(v12 -> {
             flushEditText();
+        });
+        ActivityResultLauncher<Intent> imagePickerLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == getActivity().RESULT_OK && result.getData() != null) {
+                        handleImageSelection(result.getData());
+                    }
+                }
+        );
+        create_ibt_01.setOnClickListener(v12 -> {
+            Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            imagePickerLauncher.launch(intent);
+            openImagePicker();
         });
     }
 
@@ -131,10 +140,7 @@ public class FragmentCreate extends Fragment {
         }
     }
 
-    private ActivityResultLauncher<Intent> imagePickerLauncher;
     private void openImagePicker() {
-        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        imagePickerLauncher.launch(intent);
     }
 
     private void handleImageSelection(Intent data) {
